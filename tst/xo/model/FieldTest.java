@@ -1,6 +1,8 @@
 package xo.model;
 
 import org.junit.Test;
+import xo.model.exceptions.AlreadyOccupiedException;
+import xo.model.exceptions.InvalidPointException;
 
 import java.awt.*;
 
@@ -16,7 +18,7 @@ public class FieldTest {
     }
 
     @Test
-    public void setFigure() {
+    public void setFigure() throws Exception {
         final Field field = new Field();
         final Point inputPoint = new Point(0,0);
         final Figure inputFigure = Figure.O;
