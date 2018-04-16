@@ -1,7 +1,6 @@
 package xo.model;
 
 import org.junit.Test;
-import xo.model.exceptions.AlreadyOccupiedException;
 import xo.model.exceptions.InvalidPointException;
 
 import java.awt.*;
@@ -27,20 +26,6 @@ public class FieldTest {
         final Figure actualFigure = field.getFigure(inputPoint);
 
         assertEquals(inputFigure, actualFigure);
-    }
-
-    @Test
-    public void setFigureWhenAlreadyOccupied() throws Exception {
-        final Field field = new Field();
-        final Point inputPoint = new Point(0,0);
-        final Figure inputFigure = Figure.O;
-
-        field.setFigure(inputPoint, inputFigure);
-        try {
-            field.setFigure(inputPoint, inputFigure);
-            fail();
-        } catch (final AlreadyOccupiedException e) {}
-
     }
 
     @Test
